@@ -1,0 +1,724 @@
+:root {
+  --primary-color: #ff7043;
+  --secondary-color: #2c3e50;
+  --accent-color: #ecf0f1;
+  --text-color: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --metric-bg: #f9f9f9;
+  --metric-border: #ddd;
+}
+
+/* Global */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Page Layout */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ff7043, #ff9a6c);
+}
+
+/* Form Card */
+.form-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--card-shadow);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Role Selection */
+.role-section {
+  margin-top: 1rem;
+}
+
+.role-label {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.role-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.role-option {
+  background-color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.role-option input[type="radio"] {
+  accent-color: var(--primary-color);
+}
+
+/* Buttons */
+.submit-button,
+.explore-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover,
+.explore-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer */
+.form-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+}
+
+.form-footer a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  padding: 1.5rem;
+  margin: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.card p {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+
+/* Metric Cards */
+.metric-card {
+  background-color: var(--metric-bg);
+  border: 1px solid var(--metric-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.metric-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.metric-card span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Dashboard */
+.dashboard-content {
+  padding: 2rem;
+}
+
+.active-order-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  text-align: left;
+}
+
+.active-order-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.active-order-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.active-order-card button {
+  margin-top: 1rem;
+}
+
+.profile-card {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-card p {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.profile-card label {
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+.profile-card input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.browse-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.restaurant-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-card p {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+
+.order-status-page {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.order-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.order-card p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.order-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.order-card li {
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+}
+
+.restaurant-details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.restaurant-info-card,
+.menu-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.menu-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.availability {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.available {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.unavailable {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.order-page {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-order-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-order-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.menu-order-card p {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.availability {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.available {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.unavailable {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.order-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.order-controls input {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.order-summary-card {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+}
+
+.order-items-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.order-items-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.restaurant-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-info {
+  cursor: pointer;
+}
+
+.restaurant-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-info p {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+
+.restaurant-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* OwnerRestaurantProfile Page Specific Styles */
+.profile-card h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-card label {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+.profile-card .form-input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card .form-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 112, 67, 0.4);
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.profile-actions button {
+  flex: 1;
+  margin: 0 0.5rem;
+}
+
+/* Enhanced Add Menu Item Section */
+.add-menu-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(to right, #ff7043, #ff9a6c);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.add-menu-form h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.add-menu-form .form-input,
+.add-menu-form textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.add-menu-form .form-input:focus,
+.add-menu-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 112, 67, 0.5);
+}
+
+.add-menu-form .submit-button {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-menu-form .submit-button:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+
+/* AddRestaurant Page Specific Styles */
+.add-restaurant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-restaurant-form .form-input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.add-restaurant-form .form-input:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 112, 67, 0.4);
+}
+
+.add-restaurant-form .submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-restaurant-form .submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* IncomingOrders Page Specific Styles */
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.order-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.order-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.order-card button {
+  margin-top: 1rem;
+}
