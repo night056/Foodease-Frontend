@@ -60,46 +60,54 @@ const OrderPage = () => {
 
   return (
     <>
-  <Navbar role="customer" username={localStorage.getItem('username')} />
-  <div className="order-page">
-    <h2 className="form-title">🛒 Select Items to Order</h2>
+      <Navbar role="customer" username={localStorage.getItem('username')} />
+      <div className="order-page">
+        <h2 className="form-title">🛒 Select Items to Order</h2>
 
-    {successMessage && <div className="success-message">{successMessage}</div>}
+        {successMessage && <div className="success-message">{successMessage}</div>}
 
-    <div className="menu-grid">
-      {menuItems.map(item => (
-        <div key={item.id} className="card menu-order-card">
-          <h3>{item.name}</h3>
-          <p>₹{item.price}</p>
-          <p className={`availability ${item.availability ? 'available' : 'unavailable'}`}>
-            {item.availability ? 'Available' : 'Unavailable'}
-          </p>
+        <div className="menu-grid">
+          {menuItems.map(item => (
+            <div key={item.id} className="card menu-order-card">
+              <h3>{item.name}</h3>
+              <p>₹{item.price}</p>
 
-          {item.availability && (
-            <div className="order-controls">
-              <input
-                type="number"
-                min="1"
-                placeholder="Qty"
-                value={quantities[item.id] || ''}
-                onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
-              />
-              <button className="explore-button" onClick={() => handleAddToOrder(item.id)}>
-                Add to Order
-              </button>
+              {/* Veg/Non-Veg Label */}
+              <p className={`veg-label ${item.isVeg ? 'veg' : 'non-veg'}`}>
+                {item.isVeg ? '🟢 Veg' : '🔴 Non-Veg'}
+              </p>
+
+              {/* Availability */}
+              <p className={`availability ${item.availability ? 'available' : 'unavailable'}`}>
+                {item.availability ? 'Available' : 'Unavailable'}
+              </p>
+
+              {item.availability && (
+                <div className="order-controls">
+                  <input
+                    type="number"
+                    min="1"
+                    placeholder="Qty"
+                    value={quantities[item.id] || ''}
+                    onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
+                  />
+                  <button className="explore-button" onClick={() => handleAddToOrder(item.id)}>
+                    Add to Order
+                  </button>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      ))}
-    </div>
+          ))}
 
-    {orderId && (
-      <button className="submit-button" onClick={handleViewOrder}>
-        View Order
-      </button>
-    )}
-  </div>
-</>
+        </div>
+
+        {orderId && (
+          <button className="submit-button" onClick={handleViewOrder}>
+            View Order
+          </button>
+        )}
+      </div>
+    </>
   );
 };
 

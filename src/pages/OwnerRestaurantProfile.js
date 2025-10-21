@@ -107,12 +107,9 @@ const OwnerRestaurantProfile = () => {
           <>
             <p><strong>Name:</strong> {restaurant.name}</p>
             <p><strong>Address:</strong> {restaurant.address}</p>
-            <p><strong>Description:</strong> {restaurant.description || 'N/A'}</p>
+            
 
             <div className="profile-actions">
-              <button className="submit-button" onClick={() => setEditMode(true)}>
-                Edit Details
-              </button>
               <button className="explore-button" onClick={handleViewMenu}>
                 View Menu
               </button>

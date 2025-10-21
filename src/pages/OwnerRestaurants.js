@@ -36,9 +36,7 @@ const OwnerRestaurants = () => {
     navigate(`/restaurant/${id}/details`);
   };
 
-  const handleEdit = (id) => {
-    navigate(`/add-menu-items/${id}`);
-  };
+
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this restaurant?')) {
@@ -76,7 +74,7 @@ const OwnerRestaurants = () => {
                   <p>{r.address}</p>
                 </div>
                 <div className="restaurant-actions">
-                  <button className="explore-button" onClick={() => handleEdit(r.id)}>Edit</button>
+
                   <button className="submit-button" onClick={() => handleDelete(r.id)}>Delete</button>
                 </div>
               </div>

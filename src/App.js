@@ -26,7 +26,7 @@ import OwnerOrders from './pages/OwnerOrders';
 import RestaurantOrders from './pages/RestaurantOrders';
 import TrackDelivery from './pages/TrackDelivery';
 import PaymentPage from './pages/PaymentPage';
-
+import MyRatingsPage from './pages/MyRatingsPage';
 
 function App() {
   return (
@@ -49,7 +49,6 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/profile/:username" element={<UserProfile />} />
         <Route path="/owner/restaurants" element={<OwnerRestaurants />} />
-        <Route path="/owner/restaurants" element={<OwnerRestaurants />} />
         <Route path="/owner/restaurant/:restaurantId/profile" element={<OwnerRestaurantProfile />} />
         <Route path="/owner/restaurant/:restaurantId/menu" element={<OwnerViewMenu />} />
         <Route path="/owner/incoming-orders" element={<IncomingOrders />} />
@@ -59,7 +58,7 @@ function App() {
         <Route path="/owner/restaurant/:restaurantId/orders" element={<RestaurantOrders />} />
         <Route path="/delivery/track" element={<TrackDelivery />} />
         <Route path="/payment" element={<PaymentPage />} />
-
+        <Route path="/my-ratings" element={<MyRatingsPage />} />
       </Routes>
     </Router>
   );
