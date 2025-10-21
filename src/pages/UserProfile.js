@@ -15,6 +15,7 @@ const UserProfile = () => {
   const role = decoded.role?.toLowerCase() || decoded.roles?.[0]?.toLowerCase(); // fallback for multiple roles
 
   useEffect(() => {
+    document.title = "Profile";
     API.get('/user/me', {
       headers: { Authorization: `Bearer ${token}` },
     })

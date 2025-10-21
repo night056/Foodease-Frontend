@@ -19,6 +19,7 @@ const OrderStatusPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Your orders";
     API.get(`/orders/customer/${customerId}`, { headers })
       .then(res => {
         setOrders(res.data);

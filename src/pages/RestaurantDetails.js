@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/AxiosConfig';
 import Navbar from '../components/Navbar';
 import '../styles.css';
-import { useNavigate } from 'react-router-dom';
-
-
 
 const RestaurantDetails = () => {
   const { restaurantId } = useParams();
   const [restaurant, setRestaurant] = useState(null);
   const [menuItems, setMenuItems] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     API.get(`/restaurants/${restaurantId}`)
       .then(res => setRestaurant(res.data))
       .catch(err => console.error('Error fetching restaurant:', err));
   }, [restaurantId]);
+
+  useEffect(() => {
+    if (restaurant) {
+      document.title = `${restaurant.name} | FoodEase`;
+    }
+  }, [restaurant]);
 
   const handleViewMenu = () => {
     API.get(`/menu-items/restaurant/${restaurantId}`)

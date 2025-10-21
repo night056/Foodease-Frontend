@@ -46,8 +46,9 @@ const DeliveryDashboard = () => {
     fetchAvailableDeliveries();
   }, [token, userId]);
 
-  // Poll available deliveries every 30s if no assigned delivery
+  
   useEffect(() => {
+    document.title = "Home";
     let interval;
     if (!assignedDelivery) {
       interval = setInterval(() => {

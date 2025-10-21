@@ -10,6 +10,7 @@ const BrowseRestaurants = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Browse";
     API.get('/restaurants')
       .then(res => setRestaurants(res.data))
       .catch(err => console.error(err));

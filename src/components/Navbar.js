@@ -17,7 +17,7 @@ const Navbar = ({ role, username }) => {
         )}
         {role === 'customer' && <li><Link to="/browse">Browse</Link></li>}
         {role === 'delivery' && <li><Link to="/deliveries">My Deliveries</Link></li>}
-        {role === 'admin' && <li><Link to="/admin-panel">Admin Panel</Link></li>}
+        
         <li><Link to="/logout">Logout</Link></li>
       </ul>
     </nav>

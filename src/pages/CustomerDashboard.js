@@ -15,6 +15,7 @@ const CustomerDashboard = () => {
   const customerId = decoded.id;
 
   useEffect(() => {
+    document.title = "Home";
     API.get('/user/me')
       .then(res => setUser(res.data))
       .catch(err => console.error(err));

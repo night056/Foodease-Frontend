@@ -15,6 +15,7 @@ const MyDeliveries = () => {
   const userId = decoded.id;
 
   useEffect(() => {
+    document.title = "My deliveries";
     API.get('/user/me', {
       headers: { Authorization: `Bearer ${token}` }
     })

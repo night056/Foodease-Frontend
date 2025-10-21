@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
+  useEffect(() => {
+      document.title = "FoodEase";
+    }, []);
   return (
     <div style={styles.container}>
       <h1>Welcome to FoodEase</h1>

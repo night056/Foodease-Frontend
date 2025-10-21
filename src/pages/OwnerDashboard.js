@@ -10,6 +10,7 @@ const OwnerDashboard = () => {
    
 
   useEffect(() => {
+    document.title = "Home";
     API.get('/user/me')
       .then(res => {
         const userData = res.data;

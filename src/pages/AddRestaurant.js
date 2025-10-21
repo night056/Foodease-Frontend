@@ -10,6 +10,7 @@ const AddRestaurant = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "New Restaurant";
     API.get('/user/me')
       .then(res => {
         setOwnerId(res.data.id);

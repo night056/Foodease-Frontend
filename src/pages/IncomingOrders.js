@@ -13,6 +13,7 @@ const IncomingOrders = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Incoming Orders";
     API.get('/orders/owner/pending', {
       headers: { Authorization: `Bearer ${token}` },
     })

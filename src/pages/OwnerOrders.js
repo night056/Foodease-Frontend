@@ -13,6 +13,7 @@ const OwnerOrders = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Orders";
   API.get(`/restaurants/owner/${ownerId}`)
     .then((res) => setRestaurants(res.data))
     .catch((err) => console.error('Error fetching restaurants:', err));

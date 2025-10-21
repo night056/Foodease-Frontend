@@ -31,6 +31,12 @@ const OwnerRestaurantProfile = () => {
       .catch((err) => console.error('Error fetching restaurant:', err));
   }, [restaurantId, token]);
 
+  useEffect(() => {
+    if (restaurant) {
+      document.title = `${restaurant.name} | Owner Profile | FoodEase`;
+    }
+  }, [restaurant]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
