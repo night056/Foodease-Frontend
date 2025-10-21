@@ -20,7 +20,11 @@ import OwnerRestaurants from './pages/OwnerRestaurants';
 import OwnerRestaurantProfile from './pages/OwnerRestaurantProfile';
 import OwnerViewMenu from './pages/OwnerViewMenu';
 import IncomingOrders from './pages/IncomingOrders';
-import OrderDetailsForOwner from './pages/OrderDetailsForOwner';
+import OwnerOrderDetails from './pages/OwnerOrderDetails';
+import MyDeliveries from './pages/MyDeliveries';
+import OwnerOrders from './pages/OwnerOrders';
+import RestaurantOrders from './pages/RestaurantOrders';
+import TrackDelivery from './pages/TrackDelivery';
 
 
 
@@ -49,7 +53,11 @@ function App() {
         <Route path="/owner/restaurant/:restaurantId/profile" element={<OwnerRestaurantProfile />} />
         <Route path="/owner/restaurant/:restaurantId/menu" element={<OwnerViewMenu />} />
         <Route path="/owner/incoming-orders" element={<IncomingOrders />} />
-        <Route path="/owner/order/:orderId/details" element={<OrderDetailsForOwner />} />
+        <Route path="/owner/order/:orderId/details" element={<OwnerOrderDetails />} />
+        <Route path="/deliveries" element={<MyDeliveries />} />
+        <Route path="/owner/orders" element={<OwnerOrders />} />
+        <Route path="/owner/restaurant/:restaurantId/orders" element={<RestaurantOrders />} />
+        <Route path="/delivery/track" element={<TrackDelivery />} />
 
       </Routes>
     </Router>

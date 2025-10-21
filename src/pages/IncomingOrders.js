@@ -31,11 +31,11 @@ const IncomingOrders = () => {
         <h2 className="section-title">Incoming Orders</h2>
         <div className="order-grid">
           {orders.map(order => (
-            <div key={order.id} className="order-card">
-              <h3>Order #{order.id}</h3>
+            <div key={order.orderId} className="order-card">
+              <h3>Order #{order.orderId}</h3>
               <p><strong>Status:</strong> {order.status}</p>
               <p><strong>Total:</strong> ₹{order.totalAmt}</p>
-              <button className="submit-button" onClick={() => handleViewDetails(order.id)}>
+              <button className="submit-button" onClick={() => handleViewDetails(order.orderId)}>
                 View Details
               </button>
             </div>
