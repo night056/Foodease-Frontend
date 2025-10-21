@@ -25,7 +25,7 @@ import MyDeliveries from './pages/MyDeliveries';
 import OwnerOrders from './pages/OwnerOrders';
 import RestaurantOrders from './pages/RestaurantOrders';
 import TrackDelivery from './pages/TrackDelivery';
-
+import PaymentPage from './pages/PaymentPage';
 
 
 function App() {
@@ -58,6 +58,7 @@ function App() {
         <Route path="/owner/orders" element={<OwnerOrders />} />
         <Route path="/owner/restaurant/:restaurantId/orders" element={<RestaurantOrders />} />
         <Route path="/delivery/track" element={<TrackDelivery />} />
+        <Route path="/payment" element={<PaymentPage />} />
 
       </Routes>
     </Router>

@@ -20,6 +20,7 @@ const OrderSummary = () => {
   useEffect(() => {
     API.get(`/orders/customer/${customerId}/current`, { headers })
       .then(res => {
+        console.log('Order response:', res.data);
         setOrder(res.data);
         setLoading(false);
       })
@@ -29,16 +30,8 @@ const OrderSummary = () => {
       });
   }, [customerId]);
 
-  const handlePlaceOrder = () => {
-    API.post(`/orders/${orderId}/place`, {}, { headers })
-      .then(() => {
-        alert('Order placed successfully!');
-        navigate(`/dashboard/customer/${username}`);
-      })
-      .catch(err => {
-        console.error('Error placing order:', err);
-        alert('Failed to place order.');
-      });
+  const redirectToPayment = () => {
+    navigate(`/payment?orderId=${order.orderId}`);
   };
 
   if (loading) return <p>Loading order summary...</p>;
@@ -57,8 +50,8 @@ const OrderSummary = () => {
           ))}
         </ul>
         <p><strong>Total Amount:</strong> ₹{order.totalAmt}</p>
-        <button className="submit-button" onClick={handlePlaceOrder}>
-          Place Order
+        <button className="submit-button" onClick={redirectToPayment}>
+          Pay Now
         </button>
       </div>
     </>
